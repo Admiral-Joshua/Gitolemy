@@ -1,0 +1,28 @@
+{
+  "name": "gitolemy",
+  "version": "1.0.0",
+  "description": "A *hopefully* simple, cross-platform Git-client designed to look a bit like the familiar SourceTree application by Atlassian.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Admiral-Joshua/Gitolemy.git"
+  },
+  "keywords": [
+    "Git",
+    "GitClient",
+    "Source",
+    "Control"
+  ],
+  "author": "Joshua Richardson-Noyes",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/Admiral-Joshua/Gitolemy/issues"
+  },
+  "homepage": "https://github.com/Admiral-Joshua/Gitolemy#readme",
+  "devDependencies": {
+    "electron": "^6.0.7"
+  }
+}
