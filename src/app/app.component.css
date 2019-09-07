@@ -1,0 +1,16 @@
+div.topbar {
+    width: 100vw;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 68px;
+    background-color: #fafafa;
+}
+div.sidebar {
+    width: 20vw;
+    height: calc(100vh - 68px);
+    position: absolute;
+    left: 0px;
+    top: 68px;
+    background-color: #fafafa;
+}

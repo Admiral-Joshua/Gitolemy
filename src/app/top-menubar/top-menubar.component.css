@@ -1,0 +1,11 @@
+button.menubar-btn {
+    width: 65px;
+    height: 68px;
+}
+em.menubar-btn-text {
+    padding: 0px;
+    text-align: center;
+    font-size: 10pt;
+    font-style: normal;
+    margin: 2px 0px;
+}

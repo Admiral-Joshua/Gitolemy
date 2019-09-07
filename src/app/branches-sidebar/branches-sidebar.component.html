@@ -1,0 +1,36 @@
+<div class="tree-toggle-main btn-light" (click)="toggleFileStatus()">
+    <p><fa-icon [icon]="fileStatusIcon"></fa-icon> File Status</p>
+</div>
+<div [hidden]="!fileStatusExpanded" class="tree-toggle-contents">
+    <div class="tree-contents-item">
+        <p class="tree-contents-text">Working Copy</p>
+    </div>
+</div>
+<div class="tree-toggle-main btn-light" (click)="toggleLocalBranches()">
+    <p><fa-icon [icon]="branchIcon"></fa-icon> Local Branches</p>
+</div>
+<div [hidden]="!localBranchesExpanded" class="tree-toggle-contents">
+    <div (dblclick)="switchBranch(branch)" class="tree-contents-item" *ngFor="let branch of localBranches" [ngClass]="{'tree-contents-item-selected': (branch === currentBranch)}">
+        <p class="tree-contents-text"><fa-icon [ngStyle]="{'opacity': (branch === currentBranch) ? 1 : 0}" class="fa-xs" [icon]="activeBranchIcon"></fa-icon>
+        {{branch}}</p>
+    </div>
+</div>
+<div class="tree-toggle-main btn-light" (click)="toggleTags()">
+    <p><fa-icon [icon]="tagIcon"></fa-icon> Tags</p>
+</div>
+<div [hidden]="!tagsExpanded" class="tree-toggle-contents">
+    <div class="tree-contents-item" *ngFor="let tag of repoTags">
+        <p class="tree-contents-text">{{tag}}</p>
+    </div>
+</div>
+<div class="tree-toggle-main btn-light" (click)="toggleRemotes()">
+    <p><fa-icon [icon]="cloudIcon"></fa-icon> Remotes</p>
+</div>
+<div [hidden]="!remotesExpanded" class="tree-toggle-contents">
+    <div class="tree-contents-item" *ngFor="let remote of remotes">
+        <p class="tree-contents-text" (click)="remote.expanded = !remote.expanded">{{remote.name}}</p>
+        <div [hidden]="!remote.expanded" class="tree-contents-item" *ngFor="let refs of remote.refs | keyvalue">
+            <p class="tree-contents-text">{{refs.key}}</p>
+        </div>
+    </div>
+</div>

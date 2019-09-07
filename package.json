@@ -1,10 +1,16 @@
 {
   "name": "gitolemy",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "A *hopefully* simple, cross-platform Git-client designed to look a bit like the familiar SourceTree application by Atlassian.",
-  "main": "index.js",
+  "main": "electron/dist/main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e",
+    "electron": "ng build --base-href ./ && tsc --p electron && electron ."
   },
   "repository": {
     "type": "git",
@@ -22,7 +28,47 @@
     "url": "https://github.com/Admiral-Joshua/Gitolemy/issues"
   },
   "homepage": "https://github.com/Admiral-Joshua/Gitolemy#readme",
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "~8.2.4",
+    "@angular/common": "~8.2.4",
+    "@angular/compiler": "~8.2.4",
+    "@angular/core": "~8.2.4",
+    "@angular/forms": "~8.2.4",
+    "@angular/platform-browser": "~8.2.4",
+    "@angular/platform-browser-dynamic": "~8.2.4",
+    "@angular/router": "~8.2.4",
+    "@fortawesome/angular-fontawesome": "^0.5.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.22",
+    "@fortawesome/free-regular-svg-icons": "^5.10.2",
+    "@fortawesome/free-solid-svg-icons": "^5.10.2",
+    "bootstrap": "^4.3.1",
+    "rxjs": "~6.4.0",
+    "simple-git": "^1.126.0",
+    "tslib": "^1.10.0",
+    "zone.js": "~0.9.1"
+  },
   "devDependencies": {
-    "electron": "^6.0.7"
+    "@angular-devkit/build-angular": "~0.803.3",
+    "@angular/cli": "~8.3.3",
+    "@angular/compiler-cli": "~8.2.4",
+    "@angular/language-service": "~8.2.4",
+    "@types/electron": "^1.6.10",
+    "@types/jasmine": "~3.3.8",
+    "@types/jasminewd2": "~2.0.3",
+    "@types/node": "~8.9.4",
+    "codelyzer": "^5.0.0",
+    "electron": "^6.0.7",
+    "jasmine-core": "~3.4.0",
+    "jasmine-spec-reporter": "~4.2.1",
+    "karma": "~4.1.0",
+    "karma-chrome-launcher": "~2.2.0",
+    "karma-coverage-istanbul-reporter": "~2.0.1",
+    "karma-jasmine": "~2.0.1",
+    "karma-jasmine-html-reporter": "^1.4.0",
+    "protractor": "~5.4.0",
+    "ts-node": "~7.0.0",
+    "tslint": "~5.15.0",
+    "typescript": "~3.5.3"
   }
 }

@@ -1,0 +1,19 @@
+div.tree-toggle-main {
+    margin: 5px 10px;
+    cursor: pointer;
+}
+div.tree-contents-item-selected {
+    background-color: #ccc !important;
+}
+div.tree-contents-item:hover {
+    background-color: #eaeaea;
+    cursor: pointer;
+}
+div.tree-contents-item {
+    margin: 1px 0px;
+}
+p.tree-contents-text {
+    font-size: 10pt;
+    margin: 0px 2px 0px 12%;
+    padding: 0px;
+}
