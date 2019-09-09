@@ -8,8 +8,8 @@ let win: BrowserWindow
 
 function createWindow() {
     win = new BrowserWindow({
-        width: 960,
-        height: 640,
+        width: 1200,
+        height: 800,
         webPreferences: {
             nodeIntegration: true
         }
@@ -52,6 +52,24 @@ app.on('ready', () => {
                 throw err;
             }
             e.sender.send('remotes', remotes);
+        })
+    });
+
+    ipcMain.on('getStatus', (e) => {
+        simpleGit.status((err, status) => {
+            if (err) {
+                throw err;
+            }
+            e.sender.send('statusRes', status);
+        })
+    })
+
+    ipcMain.on('getDiffs', (e) => {
+        simpleGit.diff((err, diffs) => {
+            if (err) {
+                throw err;
+            }
+            e.sender.send('diffRes', diffs);
         })
     })
 });

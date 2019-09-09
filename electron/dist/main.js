@@ -7,8 +7,8 @@ var simpleGit = require('simple-git')(process.cwd());
 var win;
 function createWindow() {
     win = new electron_1.BrowserWindow({
-        width: 960,
-        height: 640,
+        width: 1200,
+        height: 800,
         webPreferences: {
             nodeIntegration: true
         }
@@ -42,6 +42,22 @@ electron_1.app.on('ready', function () {
                 throw err;
             }
             e.sender.send('remotes', remotes);
+        });
+    });
+    electron_1.ipcMain.on('getStatus', function (e) {
+        simpleGit.status(function (err, status) {
+            if (err) {
+                throw err;
+            }
+            e.sender.send('statusRes', status);
+        });
+    });
+    electron_1.ipcMain.on('getDiffs', function (e) {
+        simpleGit.diff(function (err, diffs) {
+            if (err) {
+                throw err;
+            }
+            e.sender.send('diffRes', diffs);
         });
     });
 });

@@ -1,0 +1,30 @@
+<div class="window-contents">
+    <div id="file-status-view" [hidden]="currentView !== 'file-status'">
+        <div class="staging-files-section">
+            <p class="file-status-text-title">Staged Files</p>
+            <select size="6" multiple [ngModel]="selectedTrackedFiles">
+                <option *ngFor="let file of getStagedFiles()">{{file.filepath}}</option>
+            </select>
+        </div>
+        <div class="staging-files-section">
+            <p class="file-status-text-title">Unstaged Files</p>
+            <select size="6" multiple [ngModel]="selectedUntrackedFiles">
+                    <option *ngFor="let file of getUnstagedFiles()">{{file.filepath}}</option>
+            </select>
+        </div>
+        <div style="vertical-align: middle; text-align: center;" class="file-diff-view">
+            <p>Select a file to view the diff.</p>
+        </div>
+        <div class="commit-options">
+            <fa-icon [icon]="gitAuthor.icon"></fa-icon><p class="gitauthor-details"> {{gitAuthor.fullName}} <em class="gitauthor-mail"><{{gitAuthor.email}}></em></p>
+            <div class="commit-options-form">
+                <form>
+                    <textarea class="form-control" id="comment-input" [(value)]="commitMsg" rows="4"></textarea>
+                    <input class="form-check-input" type="checkbox" name="pushAlso">
+                    <label class="form-check-label" for="pushAlso"> Push changes immediately to remote-branch-name</label>
+                    <button style="float: right;" class="btn btn-light">Commit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

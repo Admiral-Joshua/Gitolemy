@@ -31,9 +31,9 @@ export class BranchesSidebarComponent {
         });
 
         this._ipc.send('ping');*/
-        setInterval(() => {
+        /*setInterval(() => {
             this.refreshSidebar();
-        }, 10000);
+        }, 10000);*/
         this.refreshSidebar();
     }
 
