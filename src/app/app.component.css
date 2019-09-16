@@ -3,22 +3,22 @@ div.topbar {
     position: absolute;
     left: 0px;
     top: 0px;
-    height: 68px;
+    height: 95px;
     background-color: #fafafa;
 }
 div.sidebar {
     width: 20vw;
-    height: calc(100vh - 68px);
+    height: calc(100vh - 95px);
     position: absolute;
     left: 0px;
-    top: 68px;
+    top: 95px;
     background-color: #fafafa;
 }
 div.main-window {
     width: 79vw;
-    height: calc(100vh - 68px);
+    height: calc(100vh - 95px);
     position: absolute;
     left: 20vw;
-    top: 68px;
+    top: 95px;
     background-color: #fcfcfc;
 }

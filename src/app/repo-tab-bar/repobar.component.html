@@ -1,0 +1,7 @@
+<div class="repobar-container">
+    <div class="repo-tab" *ngFor="let repo of availableRepos; let i = index" [ngClass]="{'repo-tab-selected': activeRepo === i}" (click)="switchRepo(i)">
+        <p class="repo-tab-text">{{(repo.type === 0) ? repo.name : 'New tab'}}</p>
+        <div class="close-btn" (click)="closeRepo(i)">X</div>
+    </div>
+    <fa-icon class="add-icon" [icon]="addIcon" (click)="prepNewRepo()"></fa-icon>
+</div>

@@ -26,9 +26,7 @@ export class IpcService {
   }
 
   public send(channel: string, ...args): void {
-    if (!this._ipc) {
-      return;
-    }
+    if (!this._ipc) {return;}
 
     this._ipc.send(channel, ...args);
   }
