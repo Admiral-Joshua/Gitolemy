@@ -4,6 +4,9 @@ import { faUser } from "@fortawesome/free-solid-svg-icons";
 
 import { IpcService } from "../ipc.service";
 import { ProtractorExpectedConditions } from 'protractor';
+import { GitService } from '../git.service/git.service';
+import { GitAuthor } from '../git.service/datatypes/GitAuthor';
+import { GitRepo } from '../git.service/datatypes/GitRepo';
 
 @Component({
     selector: "main-window",
@@ -12,13 +15,14 @@ import { ProtractorExpectedConditions } from 'protractor';
 })
 
 export class MainWindowComponent {
-    currentView : string = "file-status";
+    //currentView : string = "file-status";
+    currentView : string = "local-repos";
 
-    gitAuthor: any = {
+    /*gitAuthor: any = {
         fullName: "Joshua Richardson-Noyes",
         email: "admiraljrn@gmail.com",
         icon: faUser
-    }
+    }*/
 
     allFiles: GitFile[] = [];
 
@@ -40,13 +44,17 @@ export class MainWindowComponent {
         return unstagedFiles;
     }
 
+    getLocalRepos(): GitRepo[] {
+        return this._git.getHiddenRepos()
+    }
+
 
     selectedUntrackedFiles: string[] = [];
     selectedTrackedFiles: string[] = [];
 
     fileChanges: any[] = [];
     
-    constructor(private _ipc: IpcService) {
+    constructor(private _ipc: IpcService, private _git: GitService) {
         this.refreshStatus();
         //this.getDiffs();
     }
@@ -55,6 +63,10 @@ export class MainWindowComponent {
 
     selectionChanged(e: any) {
 
+    }
+
+    getAuthor(): GitAuthor {
+        return this._git.getAuthor()
     }
 
     getDiffs() {

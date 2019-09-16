@@ -16,7 +16,7 @@
             <p>Select a file to view the diff.</p>
         </div>
         <div class="commit-options">
-            <fa-icon [icon]="gitAuthor.icon"></fa-icon><p class="gitauthor-details"> {{gitAuthor.fullName}} <em class="gitauthor-mail"><{{gitAuthor.email}}></em></p>
+            <fa-icon [icon]="getAuthor().icon"></fa-icon><p class="gitauthor-details"> {{getAuthor().fullName}} <em class="gitauthor-mail"><{{getAuthor().email}}></em></p>
             <div class="commit-options-form">
                 <form>
                     <textarea class="form-control" id="comment-input" [(value)]="commitMsg" rows="4"></textarea>
@@ -24,6 +24,13 @@
                     <label class="form-check-label" for="pushAlso"> Push changes immediately to remote-branch-name</label>
                     <button style="float: right;" class="btn btn-light">Commit</button>
                 </form>
+            </div>
+        </div>
+    </div>
+    <div id="file-status-view" [hidden]="currentView !== 'local-repos'">
+        <div class="repo-list">
+            <div class="repo-list-item" *ngFor="let repo of getLocalRepos()">
+                <p><b>{{repo.name}}</b><br/><em>{{repo.path}}</em></p>
             </div>
         </div>
     </div>

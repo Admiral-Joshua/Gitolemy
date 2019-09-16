@@ -3,6 +3,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var electron_1 = require("electron");
 var path = require("path");
 var url = require("url");
+var ElectronStore = require("electron-store");
+var DataStore = new ElectronStore({
+    defaults: {}
+});
+var activeRepos = [];
 var simpleGit = require('simple-git')(process.cwd());
 var win;
 function createWindow() {
@@ -28,6 +33,9 @@ electron_1.app.on('ready', function () {
     /*ipcMain.on('ping', (e) => {
         e.sender.send('pong')
     });*/
+    electron_1.ipcMain.on('getRepos', function (e) {
+        e.sender.send('activeRepos', activeRepos);
+    });
     electron_1.ipcMain.on('getLocalBranches', function (e) {
         simpleGit.branchLocal(function (err, branches) {
             if (err) {

@@ -1,6 +1,18 @@
 button.menubar-btn {
     width: 65px;
-    height: 68px;
+    height: 67px;
+    padding: 0px;
+    margin: 0px;
+}
+button.divider-menubar-btn {
+    width: 45px;
+    height: 67px;
+    padding: 0px;
+    margin: 0px;
+    border: none;
+    background-color: transparent;
+    cursor: default;
+    font-size: 8pt;
 }
 em.menubar-btn-text {
     padding: 0px;

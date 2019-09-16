@@ -1,0 +1,65 @@
+div.repobar-container {
+    background-color: #4444ee;
+    height: 26px;
+}
+div.repo-tab {
+    display: inline-block;
+    width: 17%;
+    height: 95%;
+    position: relative;
+    top: 5%;
+    font-size: 11pt;
+    border-radius: 0px;
+    border-top-right-radius: 0px;
+    background-color: white;
+    padding: 2px 4px;
+    border: 1px solid black;
+    margin: 0px 2px;
+    opacity: 0.90;
+    /*font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;*/
+}
+p.repo-tab-text {
+    margin: 1px 3px;
+}
+div.repo-tab-add {
+    width: 25px;
+}
+div.repo-tab:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+div.repo-tab-selected {
+    background-color: #fafafa;
+    border-bottom: none;
+    opacity: 1;
+}
+div.repo-tab-selected:hover {
+    background-color: #fafafa;
+    opacity: 1;
+    cursor: default;
+}
+div.close-btn {
+    height: 100%;
+    width: 20px;
+    position: absolute;
+    top: 0px;
+    left: calc(100% - 20px);
+    padding: 0px;
+    margin: 0px;
+    transition: .25s;
+    text-align: center;
+}
+div.close-btn:hover {
+    background-color: red;
+    color: white;
+    cursor: pointer;
+}
+.add-icon {
+    color: lightgray;
+    padding: 1px 4px;
+}
+.add-icon:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    color: white;
+}

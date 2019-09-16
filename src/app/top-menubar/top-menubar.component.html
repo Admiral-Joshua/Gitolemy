@@ -1,11 +1,23 @@
-<div class="top-menubar-container" style="display: inline;">
+<div class="top-menubar-container" style="display: inline-block;" *ngIf="displayMode === 'repo-setup'">
+    <button class="btn btn-light menubar-btn"><fa-icon class="fa-lg" [icon]="localIcon"></fa-icon><br/><em class="menubar-btn-text">Local</em></button>
+    <button class="btn btn-light menubar-btn"><fa-icon class="fa-lg" [icon]="remoteIcon" disabled></fa-icon><br/><em class="menubar-btn-text">Remote</em></button>
+    <button class="divider-menubar-btn" style="display: inline;">|</button>
+    <button class="btn btn-light menubar-btn"><fa-icon class="fa-lg" [icon]="cloneIcon"></fa-icon><br/><em class="menubar-btn-text">Clone</em></button>
+    <button class="btn btn-light menubar-btn"><fa-icon class="fa-lg" [icon]="addIcon"></fa-icon><br/><em class="menubar-btn-text">Add</em></button>
+    <button class="btn btn-light menubar-btn"><fa-icon class="fa-lg" [icon]="createIcon"></fa-icon><br/><em class="menubar-btn-text">Create</em></button>
+</div>
+<div class="top-menubar-container" style="display: inline-block;" *ngIf="displayMode === 'in-repo'">
     <button class="btn btn-light menubar-btn"><fa-icon class="fa-lg" [icon]="commitIcon"></fa-icon><br/><em class="menubar-btn-text">Commit</em></button>
+    <button class="divider-menubar-btn" style="display: inline;">|</button>
     <button class="btn btn-light menubar-btn"><fa-icon class="fa-lg" [icon]="pullIcon"></fa-icon><br/><em class="menubar-btn-text">Pull</em></button>
     <button class="btn btn-light menubar-btn"><fa-icon class="fa-lg" [icon]="pushIcon"></fa-icon><br/><em class="menubar-btn-text">Push</em></button>
     <button class="btn btn-light menubar-btn"><fa-icon class="fa-lg" [icon]="fetchIcon"></fa-icon><br/><em class="menubar-btn-text">Fetch</em></button>
+    <button class="divider-menubar-btn" style="display: inline;">|</button>
     <button class="btn btn-light menubar-btn"><fa-icon class="fa-lg" [icon]="branchIcon"></fa-icon><br/><em class="menubar-btn-text">Branch</em></button>
     <button class="btn btn-light menubar-btn"><fa-icon class="fa-lg" [icon]="branchIcon"></fa-icon><br/><em class="menubar-btn-text">Merge</em></button>
+    <button class="divider-menubar-btn" style="display: inline;">|</button>
     <button class="btn btn-light menubar-btn"><fa-icon class="fa-lg" [icon]="stashIcon"></fa-icon><br/><em class="menubar-btn-text">Stash</em></button>
+    <button class="divider-menubar-btn" style="display: inline;">|</button>
     <button class="btn btn-light menubar-btn"><fa-icon class="fa-lg" [icon]="discardIcon"></fa-icon><br/><em class="menubar-btn-text">Discard</em></button>
     <button class="btn btn-light menubar-btn"><fa-icon class="fa-lg" [icon]="tagIcon"></fa-icon><br/><em class="menubar-btn-text">Tags</em></button>
 </div>

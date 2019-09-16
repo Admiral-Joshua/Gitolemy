@@ -10,6 +10,7 @@ import { IpcService } from "./ipc.service";
 
 import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 
+import { RepobarComponent } from "./repo-tab-bar/repobar.component";
 import { MenubarComponent } from "./top-menubar/top-menubar.component";
 import { BranchesSidebarComponent } from "./branches-sidebar/branches-sidebar.component";
 import { MainWindowComponent } from "./main-window/main-window.component";
@@ -19,7 +20,8 @@ import { MainWindowComponent } from "./main-window/main-window.component";
     AppComponent,
     MenubarComponent,
     BranchesSidebarComponent,
-    MainWindowComponent
+    MainWindowComponent,
+    RepobarComponent
   ],
   imports: [
     BrowserModule,
