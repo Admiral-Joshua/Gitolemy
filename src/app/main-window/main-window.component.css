@@ -10,62 +10,7 @@ div.window-contents {
     margin: 1px;
     padding: 0px;
 }
-div#file-status-view {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-}
-div.staging-files-section {
-    width: 46%;
-    height: 35%;
-    padding: 0px;
-    margin: 4px 2px;
-    overflow: hidden;
-}
-select {
-    width: 100%;
-    height: calc(100% - 25px);
-    margin: 0px;
-    padding: 0px;
-    font-size: 11pt;
-    overflow-y: auto;
-    overflow-x: hidden;
-}
-div.file-diff-view {
-    width: 54%;
-    height: 70%;
-    position: absolute;
-    left: 46%;
-    top: 0px;
-}
-div.commit-options {
-    width: 100%;
-    height: 29%;
-    margin: 5px 0px;
-    position: relative;
-    top: 1%;
-}
-p.gitauthor-details {
-    font-weight: bold;
-    font-size: 12pt;
-    display: inline;
-    margin: 4px 4px;
-}
-em.gitauthor-mail {
-    font-size: 11pt;
-    font-style: normal;
-    margin: 0px 5px;
-}
-div.commit-options-form {
-    overflow: hidden;
-    padding: 0 2px 0 2px;
-}
-textarea#comment-input {
-    width: 100%;
-    resize: none;
-    margin: 1px 1px 4px 1px;
-    padding: 2px 4px;
-}
+
 input[type=checkbox] {
     position: relative;
     left: 25px;

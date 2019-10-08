@@ -1,0 +1,26 @@
+<div class="clone-repo-options">
+    <h1>Clone</h1>
+    <p>Enter repo path/URL to get started.</p>
+    <form style="width: 60%; margin: 15px 5px;">
+        <div class="input-group">
+            <input class="form-control" type="text" name="clone-path-input" [(ngModel)]="cloneOptions.clonePath" placeholder="Source Path / URL:" autofocus>
+            <span class="input-group-btn">
+                <button class="btn btn-light" (click)="browseDirectory()">Browse</button>
+            </span>
+        </div>
+        <div class="input-group">
+            <input class="form-control" type="text" name="dest-path-input" [(ngModel)]="cloneOptionsdestPath" placeholder="Destination Path:">
+            <span class="input-group-btn">
+                <button class="btn btn-light">Browse</button>
+            </span>
+        </div>
+        <div class="input-group">
+            <input class="form-control" type="text" name="folder-name-input" [(ngModel)]="cloneOptions.folderName" placeholder="Name:">
+        </div>
+        <label for="sectionSelect">Local Folder:</label>
+        <select class="form-control" [(ngModel)]="sectionSelect" name="cloneOptions.sectionSelect">
+            <option value="">[Root]</option>
+        </select>
+        <button class="btn btn-light clone-btn" [disabled]="cloneOptions.clonePath.length < 1">Clone</button>
+    </form>
+</div>

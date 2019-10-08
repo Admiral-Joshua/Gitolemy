@@ -1,12 +1,12 @@
-<div class="top-menubar-container" style="display: inline-block;" *ngIf="displayMode === 'repo-setup'">
-    <button class="btn btn-light menubar-btn"><fa-icon class="fa-lg" [icon]="localIcon"></fa-icon><br/><em class="menubar-btn-text">Local</em></button>
+<div class="top-menubar-container" style="display: inline-block;" ><!-- *ngIf="isInRepo()" -->
+    <button class="btn btn-light menubar-btn" (click)="switchView(1)" [ngClass]="{'selected': currentView === 1}"><fa-icon class="fa-lg" [icon]="localIcon"></fa-icon><br/><em class="menubar-btn-text">Local</em></button>
     <button class="btn btn-light menubar-btn"><fa-icon class="fa-lg" [icon]="remoteIcon" disabled></fa-icon><br/><em class="menubar-btn-text">Remote</em></button>
     <button class="divider-menubar-btn" style="display: inline;">|</button>
-    <button class="btn btn-light menubar-btn"><fa-icon class="fa-lg" [icon]="cloneIcon"></fa-icon><br/><em class="menubar-btn-text">Clone</em></button>
-    <button class="btn btn-light menubar-btn"><fa-icon class="fa-lg" [icon]="addIcon"></fa-icon><br/><em class="menubar-btn-text">Add</em></button>
+    <button class="btn btn-light menubar-btn" (click)="switchView(2)" [ngClass]="{'selected': currentView === 2}"><fa-icon class="fa-lg" [icon]="cloneIcon"></fa-icon><br/><em class="menubar-btn-text">Clone</em></button>
+    <button class="btn btn-light menubar-btn" (click)="switchView(3)" [ngClass]="{'selected': currentView === 3}"><fa-icon class="fa-lg" [icon]="addIcon"></fa-icon><br/><em class="menubar-btn-text">Add</em></button>
     <button class="btn btn-light menubar-btn"><fa-icon class="fa-lg" [icon]="createIcon"></fa-icon><br/><em class="menubar-btn-text">Create</em></button>
 </div>
-<div class="top-menubar-container" style="display: inline-block;" *ngIf="displayMode === 'in-repo'">
+<div class="top-menubar-container" style="display: inline-block;" style="display: none;"><!--*ngIf="view.isInRepo()"-->
     <button class="btn btn-light menubar-btn"><fa-icon class="fa-lg" [icon]="commitIcon"></fa-icon><br/><em class="menubar-btn-text">Commit</em></button>
     <button class="divider-menubar-btn" style="display: inline;">|</button>
     <button class="btn btn-light menubar-btn"><fa-icon class="fa-lg" [icon]="pullIcon"></fa-icon><br/><em class="menubar-btn-text">Pull</em></button>

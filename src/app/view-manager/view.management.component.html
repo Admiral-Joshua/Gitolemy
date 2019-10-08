@@ -1,0 +1,28 @@
+<div class="window-struct">
+    <div class="topbar">
+        <repobar></repobar>
+        <top-menubar></top-menubar>
+    </div>
+    <div class="sidebar" *ngIf="isInRepo()">
+        <branches-sidebar></branches-sidebar>
+    </div>
+    <div class="main-window" [ngClass]="{'window-full': !isInRepo(), 'window-half': isInRepo()}">
+        <div class="window-element" *ngIf="currentView === 1">
+            <h1>Local Repositories</h1>
+        </div>
+        <div class="window-element" *ngIf="currentView === 2">
+            <clone-repo-dialog></clone-repo-dialog>
+        </div>
+        <div class="window-element" *ngIf="currentView === 3">
+            <add-local-dialog></add-local-dialog>
+        </div>
+        <div class="window-element" *ngIf="currentView === 4">
+            <file-status></file-status>
+        </div>
+        <div class="window-element" *ngIf="currentView === 5">
+            <branch-graph></branch-graph>
+        </div>
+        
+        <!--main-window></main-window-->
+    </div>
+</div>

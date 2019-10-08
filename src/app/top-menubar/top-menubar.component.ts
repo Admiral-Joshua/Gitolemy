@@ -3,6 +3,7 @@ import { Component } from "@angular/core";
 import { faPlusCircle, faDownload, faUpload, faFileDownload,
     faCodeBranch, faFileAlt, faTrashAlt, faTag, faPlus, faFolder, faDesktop,
     faCloud, faCloudDownloadAlt} from '@fortawesome/free-solid-svg-icons';
+import { ViewManagementService } from '../view-manager/view.management.service';
 
 @Component({
     "selector": "top-menubar",
@@ -11,10 +12,18 @@ import { faPlusCircle, faDownload, faUpload, faFileDownload,
 })
 
 export class MenubarComponent {
-    //displayMode: string = "in-repo";
-    displayMode: string = "repo-setup";
 
-    constructor(){ }
+    currentView: number;
+
+    constructor(private viewService: ViewManagementService){
+        this.viewService.currentView$.subscribe((view) => {
+            this.currentView = view;
+        });
+    }
+
+    switchView(view: number) {
+        this.viewService.changeView(view);
+    }
 
     // In-Repo display mode.
     commitIcon = faPlusCircle;

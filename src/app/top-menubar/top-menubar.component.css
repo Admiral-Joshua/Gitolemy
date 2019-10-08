@@ -14,6 +14,9 @@ button.divider-menubar-btn {
     cursor: default;
     font-size: 8pt;
 }
+button.selected {
+    border-bottom: 3px solid blue;
+}
 em.menubar-btn-text {
     padding: 0px;
     text-align: center;

@@ -1,0 +1,48 @@
+div.topbar {
+    width: 100vw;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 95px;
+    background-color: #fafafa;
+}
+div.sidebar {
+    width: 20vw;
+    height: calc(100vh - 95px);
+    position: absolute;
+    left: 0px;
+    top: 95px;
+    background-color: #fafafa;
+}
+div.main-window {
+    /*width: 79vw;*/
+    height: calc(100vh - 95px);
+    position: absolute;
+    left: 20vw;
+    top: 95px;
+    background-color: #fcfcfc;
+}
+
+div.window-full {
+    width: 100vw;
+    left: 0;
+}
+div.window-half {
+    width: 79vw;
+}
+
+div.window-element {
+    width: 100%;
+    height: 100%;
+    animation: fade-up .3s forwards;
+    margin: 15px 25px;
+}
+@keyframes fade-up {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+    }
+}
